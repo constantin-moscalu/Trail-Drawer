@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3ffae9f4-01cf-4dbe-85b3-03b45bdef2c3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Systems/GameStateManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Systems/GameState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Models/RadiusDataType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UISceneLoaderManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/StopSimulationButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/RadiusController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/Utility/ReflectionUtility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/UIScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UIManagerBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/SelectRadiusButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Managers/RadiusManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/BackToMenuButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UIRadiusListManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/UIElementAnimationsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/TrailController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/IScreenElementAnimationsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Managers/GameStateTester.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/NaughtyInspector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/RunSimulationButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/ScreenElementsAnimationController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/ScriptableObjects/RadiusDataTypeDataHolder.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/CameraController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/RadiusesManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/DrawManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/RadiusSetupData.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/RadiusManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/RadiusController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/CameraController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Managers/RadiusSetupData.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/RadiusController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/TrailController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UISceneLoaderManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Systems/GameStateManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/ScreenElementsAnimationController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/IScreenElementAnimationsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/UIScreen.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Managers/GameStateTester.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UIManagerBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/ClickUIButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/UIElementAnimationsController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/RunSimulationButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/BackToMenuButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Systems/GameState.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/StopSimulationButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Models/RadiusDataType.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Managers/RadiusManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/SelectRadiusButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/ScriptableObjects/RadiusDataTypeDataHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UIRadiusListManager.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="20MlY0IOIWm1OFhfYAHmT36enOD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3ffae9f4-01cf-4dbe-85b3-03b45bdef2c3" name="Default Changelist" comment="" />
+      <created>1635862382276</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635862382276</updated>
+      <workItem from="1635862391017" duration="52000" />
+      <workItem from="1635866059777" duration="4326000" />
+      <workItem from="1635926863762" duration="19439000" />
+      <workItem from="1636013067908" duration="16436000" />
+      <workItem from="1636100022430" duration="13627000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1636029853971">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1636029853971" />
+  </component>
+</project>
