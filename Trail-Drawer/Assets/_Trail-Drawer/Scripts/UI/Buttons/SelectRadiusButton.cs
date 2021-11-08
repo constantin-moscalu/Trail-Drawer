@@ -6,7 +6,7 @@ namespace Scripts.UI.Buttons
 {
 	public class SelectRadiusButton : MonoBehaviour
 	{
-		[SerializeField] private TextMeshProUGUI name;
+		[SerializeField] private TextMeshProUGUI nameText;
 
 		private int index;
 		
@@ -26,7 +26,7 @@ namespace Scripts.UI.Buttons
 		public void UpdateData(int newIndex)
 		{
 			index = newIndex;
-			name.text = "Radius " + (newIndex + 1);
+			nameText.text = "Radius " + (newIndex + 1);
 		}
 
 		private void SelectRadiusButtonClicked()

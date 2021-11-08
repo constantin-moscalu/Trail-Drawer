@@ -26,12 +26,6 @@ namespace Scripts.UI.Managers
 
 			GameStateManager.onGameStateChange += TryUpdateButtonsList;
 			
-			// for (int i = 0; i < radiusDataTypeDataHolder.RadiusDataTypes.Count; i++)
-			// {
-			// 	var newButton = Instantiate(selectRadiusButtonPrefab, buttonsHolder);
-			// 	newButton.UpdateData(i);
-			// }
-			
 			UpdateButtonsList();
 		}
 
