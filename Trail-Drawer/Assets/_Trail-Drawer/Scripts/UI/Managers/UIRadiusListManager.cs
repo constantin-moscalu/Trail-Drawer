@@ -10,8 +10,9 @@ namespace Scripts.UI.Managers
 	{
 		[SerializeField] private SelectRadiusButton selectRadiusButtonPrefab;
 		[SerializeField] private RectTransform buttonsHolder;
-		
-		private RadiusDataTypeDataHolder radiusDataTypeDataHolder;
+
+		private RadiusDataTypeHolder radiusDataTypeHolder;
+		private RadiusModifierDataHolder radiusModifierDataHolder;
 		private List<SelectRadiusButton> selectRadiusButtons;
 
 		private void Awake()
@@ -21,11 +22,13 @@ namespace Scripts.UI.Managers
 
 		private void InitData()
 		{
-			radiusDataTypeDataHolder = Resources.Load<RadiusDataTypeDataHolder>("RadiusDataTypeDataHolder");
-			selectRadiusButtons=new List<SelectRadiusButton>();
+			radiusDataTypeHolder = Resources.Load<RadiusDataTypeHolder>("RadiusDataTypeHolder");
+			radiusModifierDataHolder = Resources.Load<RadiusModifierDataHolder>("RadiusModifierDataHolder");
+
+			selectRadiusButtons = new List<SelectRadiusButton>();
 
 			GameStateManager.onGameStateChange += TryUpdateButtonsList;
-			
+
 			UpdateButtonsList();
 		}
 
@@ -36,12 +39,12 @@ namespace Scripts.UI.Managers
 
 		private void TryUpdateButtonsList(GameState gameState)
 		{
-			if(gameState!=GameState.Menu)
+			if (gameState != GameState.Menu)
 				return;
-			
+
 			UpdateButtonsList();
 		}
-		
+
 		private void UpdateButtonsList()
 		{
 			UpdateButtonsListByCount();
@@ -50,30 +53,32 @@ namespace Scripts.UI.Managers
 
 		private void UpdateButtonsListByCount()
 		{
-			if (selectRadiusButtons.Count == radiusDataTypeDataHolder.RadiusDataTypes.Count)
+			if (selectRadiusButtons.Count == radiusDataTypeHolder.RadiusDataTypes.Count)
 				return;
 
-			if (selectRadiusButtons.Count < radiusDataTypeDataHolder.RadiusDataTypes.Count)
+			if (selectRadiusButtons.Count < radiusDataTypeHolder.RadiusDataTypes.Count)
 			{
-				int buttonsToCreateAmount = radiusDataTypeDataHolder.RadiusDataTypes.Count - selectRadiusButtons.Count;
+				int buttonsToCreateAmount = radiusDataTypeHolder.RadiusDataTypes.Count - selectRadiusButtons.Count;
 
 				for (int i = 0; i < buttonsToCreateAmount; i++)
 				{
 					var newButton = Instantiate(selectRadiusButtonPrefab, buttonsHolder);
+					newButton.Initialize(radiusModifierDataHolder);
+					
 					selectRadiusButtons.Add(newButton);
 				}
 			}
 			else
 			{
-				int buttonsToRemoveAmount = selectRadiusButtons.Count - radiusDataTypeDataHolder.RadiusDataTypes.Count;
-				int index = radiusDataTypeDataHolder.RadiusDataTypes.Count;
-				
-				for (int i = index; i < index+buttonsToRemoveAmount; i++)
+				int buttonsToRemoveAmount = selectRadiusButtons.Count - radiusDataTypeHolder.RadiusDataTypes.Count;
+				int index = radiusDataTypeHolder.RadiusDataTypes.Count;
+
+				for (int i = index; i < index + buttonsToRemoveAmount; i++)
 				{
 					Destroy(selectRadiusButtons[i].gameObject);
 				}
-				
-				selectRadiusButtons.RemoveRange(radiusDataTypeDataHolder.RadiusDataTypes.Count, buttonsToRemoveAmount);
+
+				selectRadiusButtons.RemoveRange(radiusDataTypeHolder.RadiusDataTypes.Count, buttonsToRemoveAmount);
 			}
 		}
 
@@ -81,7 +86,7 @@ namespace Scripts.UI.Managers
 		{
 			for (int i = 0; i < selectRadiusButtons.Count; i++)
 			{
-				selectRadiusButtons[i].UpdateData(i);
+				selectRadiusButtons[i].SetIndex(i);
 			}
 		}
 	}

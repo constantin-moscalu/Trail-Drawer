@@ -49,6 +49,25 @@ namespace Scripts.Controllers
 			DrawRadius();
 		}
 
+		public void SetRadius(float value)
+		{
+			radius = value;
+
+			AddChild(haveChild ? next.transform : trail.transform);
+			
+			DrawRadius();
+
+			if (haveChild)
+			{
+				next.DrawRadius();
+			}
+		}
+
+		public void SetRotationSpeed(float value)
+		{
+			rotationSpeed = value;
+		}
+
 		public void SetWidth(float maxRadius)
 		{
 			float newWidth = maxRadius * widthMultiply;
@@ -66,9 +85,9 @@ namespace Scripts.Controllers
 			}
 
 			next = radiusController;
-			next.transform.SetParent(transform);
-			next.transform.localPosition = transform.up * radius;
 			haveChild = true;
+			
+			AddChild(radiusController.transform);
 		}
 
 		public void AddTrail(TrailController trailController)
@@ -80,8 +99,7 @@ namespace Scripts.Controllers
 			}
 
 			trail = trailController;
-			trail.transform.SetParent(transform);
-			trail.transform.localPosition = transform.up * radius;
+			AddChild(trailController.transform);
 		}
 
 		public void StartRotation()
@@ -136,6 +154,12 @@ namespace Scripts.Controllers
 		{
 			lineRenderer.SetPosition(0, transform.position);
 			lineRenderer.SetPosition(1, transform.position + transform.up * radius);
+		}
+
+		private void AddChild(Transform childTransform)
+		{
+			childTransform.SetParent(transform);
+			childTransform.localPosition = transform.up * radius;
 		}
 
 		private void OnDrawGizmos()

@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 2725662708075818327}
   - component: {fileID: 7016715454962759833}
   - component: {fileID: 5706643538529138170}
+  - component: {fileID: 2186038624611279619}
   m_Layer: 5
   m_Name: Setting Panel
   m_TagString: Untagged
@@ -254,6 +255,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2186038624611279619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5706643538529138172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6142fb3331534e04b94efc541659f690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueText: {fileID: 5706643539875496101}
+  addValueControlButton: {fileID: 2020284174761532529}
+  subtractValueControlButton: {fileID: 109326370582461736}
 --- !u!1 &5706643539506832355
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Increment Button
       objectReference: {fileID: 0}
+    - target: {fileID: 5997510270871386116, guid: e710f14b91bb61442a9a34cca0c2b3ec, type: 3}
+      propertyPath: addValue
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e710f14b91bb61442a9a34cca0c2b3ec, type: 3}
 --- !u!224 &5836660195589284096 stripped
@@ -632,6 +652,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2291744617311782261, guid: e710f14b91bb61442a9a34cca0c2b3ec, type: 3}
   m_PrefabInstance: {fileID: 5706643539741025397}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2020284174761532529 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5997510270871386116, guid: e710f14b91bb61442a9a34cca0c2b3ec, type: 3}
+  m_PrefabInstance: {fileID: 5706643539741025397}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b2d44ebafb4600967def31cd530808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5962493303104324908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -735,6 +766,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Decrement Button
       objectReference: {fileID: 0}
+    - target: {fileID: 5997510270871386116, guid: e710f14b91bb61442a9a34cca0c2b3ec, type: 3}
+      propertyPath: addValue
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e710f14b91bb61442a9a34cca0c2b3ec, type: 3}
 --- !u!224 &5580770861925105753 stripped
@@ -742,3 +777,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2291744617311782261, guid: e710f14b91bb61442a9a34cca0c2b3ec, type: 3}
   m_PrefabInstance: {fileID: 5962493303104324908}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &109326370582461736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5997510270871386116, guid: e710f14b91bb61442a9a34cca0c2b3ec, type: 3}
+  m_PrefabInstance: {fileID: 5962493303104324908}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b2d44ebafb4600967def31cd530808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

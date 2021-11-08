@@ -1,4 +1,5 @@
-﻿using Scripts.Systems;
+﻿using Scripts.ScriptableObjects;
+using Scripts.Systems;
 using TMPro;
 using UnityEngine;
 
@@ -7,9 +8,10 @@ namespace Scripts.UI.Buttons
 	public class SelectRadiusButton : MonoBehaviour
 	{
 		[SerializeField] private TextMeshProUGUI nameText;
-
-		private int index;
 		
+		private int index;
+
+		private RadiusModifierDataHolder radiusModifierDataHolder;
 		private ClickUIButton clickUIButton;
 
 		private void Awake()
@@ -23,14 +25,18 @@ namespace Scripts.UI.Buttons
 			clickUIButton.OnClickDone -= SelectRadiusButtonClicked;
 		}
 
-		public void UpdateData(int newIndex)
+		public void Initialize(RadiusModifierDataHolder radiusModifierDataHolder) => this.radiusModifierDataHolder = radiusModifierDataHolder;
+
+		public void SetIndex(int newIndex)
 		{
 			index = newIndex;
-			nameText.text = "Radius " + (newIndex + 1);
+			nameText.text = "Radius " + (index + 1);
 		}
 
 		private void SelectRadiusButtonClicked()
 		{
+			radiusModifierDataHolder.SetData(nameText.text, index);
+			
 			GameStateManager.CurrentState = GameState.Settings;
 		}
 	}

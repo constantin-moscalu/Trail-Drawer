@@ -1,4 +1,5 @@
-﻿using NaughtyAttributes;
+﻿using System.Collections.Generic;
+using NaughtyAttributes;
 using Scripts.Controllers;
 using Scripts.ScriptableObjects;
 using Scripts.Systems;
@@ -20,8 +21,8 @@ namespace Scripts.Managers
 		[HorizontalLine]
 		[SerializeField, Range(1f, 10f)] private float timeScale = 1f;
 		
-		private RadiusDataTypeDataHolder radiusSetupData; 
-		private RadiusController[] radiusControllers;
+		private RadiusDataTypeHolder radiusDataTypeHolder; 
+		private List<RadiusController> radiusControllers;
 		private TrailController trailRadiusController;
 
 		private void OnValidate()
@@ -36,15 +37,18 @@ namespace Scripts.Managers
 
 		private void InitData()
 		{
-			radiusSetupData = Resources.Load<RadiusDataTypeDataHolder>("RadiusDataTypeDataHolder");
+			radiusDataTypeHolder = Resources.Load<RadiusDataTypeHolder>("RadiusDataTypeHolder");
 			
-			cameraController.SetCameraSize(radiusSetupData.GetMaxRadius());
+			cameraController.SetCameraSize(radiusDataTypeHolder.GetMaxRadius());
+
+			radiusDataTypeHolder.onRadiusUpdated += OnRadiusUpdated;
+			radiusDataTypeHolder.onRotationSpeedUpdated += OnRotationSpeedUpdated;
 
 			GameStateManager.onGameStateChange += OnGameStateChanged;
 
 			InitRadius();
 		}
-
+		
 		private void OnDestroy()
 		{
 			GameStateManager.onGameStateChange -= OnGameStateChanged;
@@ -52,17 +56,17 @@ namespace Scripts.Managers
 
 		private void InitRadius()
 		{
-			radiusControllers = new RadiusController[radiusSetupData.RadiusDataTypes.Count];
+			radiusControllers = new List<RadiusController>();
 
-			for (int i = 0; i < radiusControllers.Length; i++)
+			for (int i = 0; i < radiusDataTypeHolder.RadiusDataTypes.Count; i++)
 			{
-				var radiusData = radiusSetupData.RadiusDataTypes[i];
+				var radiusData = radiusDataTypeHolder.RadiusDataTypes[i];
 
 				var newRadius = Instantiate(radiusControllerPrefab, radiusContainerTransform);
 				newRadius.Initialize(radiusData.radius, radiusData.rotationSpeed);
-				newRadius.SetWidth(radiusSetupData.GetMaxRadius());
-				
-				radiusControllers[i] = newRadius;
+				newRadius.SetWidth(radiusDataTypeHolder.GetMaxRadius());
+
+				radiusControllers.Add(newRadius);
 
 				if (i > 0)
 				{
@@ -73,6 +77,9 @@ namespace Scripts.Managers
 			trailRadiusController = Instantiate(trailControllerPrefab);
 			radiusControllers[0].AddTrail(trailRadiusController);
 		}
+
+		private void OnRadiusUpdated(int index) => radiusControllers[index].SetRadius(radiusDataTypeHolder.RadiusDataTypes[index].radius);
+		private void OnRotationSpeedUpdated(int index) => radiusControllers[index].SetRotationSpeed(radiusDataTypeHolder.RadiusDataTypes[index].rotationSpeed);
 		
 		private void OnGameStateChanged(GameState gameState)
 		{
