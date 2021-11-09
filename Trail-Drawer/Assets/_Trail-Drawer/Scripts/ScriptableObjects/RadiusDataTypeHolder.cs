@@ -50,6 +50,13 @@ namespace Scripts.ScriptableObjects
 			onRadiusDataTypesModified?.Invoke();
 		}
 
+		public void RemoveRadius(int index)
+		{
+			radiusDataTypes.RemoveAt(index);
+			
+			onRadiusDataTypesModified?.Invoke();
+		}
+
 		private void UpdateRadiusData(int index, float radius, float rotationSpeed)
 		{
 			var radiusDataType = radiusDataTypes[index];

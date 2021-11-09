@@ -11,6 +11,7 @@
         <e p="_Trail-Drawer" t="Include">
           <e p="Scripts" t="Include">
             <e p="Controllers" t="Include">
+              <e p="ActionControllerBase.cs" t="Include" />
               <e p="CameraController.cs" t="Include" />
               <e p="RadiusController.cs" t="Include" />
               <e p="TrailController.cs" t="Include" />
@@ -32,9 +33,11 @@
             </e>
             <e p="UI" t="Include">
               <e p="Buttons" t="Include">
+                <e p="AddRadiusButton.cs" t="Include" />
                 <e p="AddValueControlButton.cs" t="Include" />
                 <e p="BackToMenuButton.cs" t="Include" />
                 <e p="ClickUIButton.cs" t="Include" />
+                <e p="RemoveRadiusButton.cs" t="Include" />
                 <e p="RunSimulationButton.cs" t="Include" />
                 <e p="SelectRadiusButton.cs" t="Include" />
                 <e p="StopSimulationButton.cs" t="Include" />

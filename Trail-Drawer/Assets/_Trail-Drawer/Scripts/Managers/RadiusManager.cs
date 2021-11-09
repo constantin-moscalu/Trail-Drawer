@@ -191,6 +191,8 @@ namespace Scripts.Managers
 				radiusControllers[i].transform.localPosition = radiusControllers[i - 1].LocalRadiusEndPosition;
 				radiusControllers[i].DrawRadius();
 			}
+
+			trailController.transform.localPosition = radiusControllers[radiusControllers.Count - 1].LocalRadiusEndPosition;
 		}
 
 		private void UpdateRotationSpeed(int index) => radiusControllers[index].UpdateRotationSpeed(radiusDataTypeHolder.RadiusDataTypes[index].rotationSpeed);

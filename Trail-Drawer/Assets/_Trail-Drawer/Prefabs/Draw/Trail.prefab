@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e093e08b6c684522873d26cc341d6413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  widthMultiply: 0.02
+  widthMultiply: 0.1
   actionRefreshDelay: 0.02
   eraseDuration: 3
   eraseEase: 11
