@@ -1,174 +1,77 @@
-﻿using System.Collections;
-using NaughtyAttributes;
+﻿using NaughtyAttributes;
 using Unity.Mathematics;
 using UnityEngine;
 
 namespace Scripts.Controllers
 {
-	public class RadiusController : MonoBehaviour
+	public class RadiusController : ActionControllerBase
 	{
-		[SerializeField] private float radius;
-		[SerializeField] private float rotationSpeed;
-		[SerializeField] private float widthMultiply;
-
 		[HorizontalLine]
-		[SerializeField] private bool drawGizmos;
-		[SerializeField] private Color color;
+		[SerializeField] private float radius;
+
+		[SerializeField] private float rotationSpeed;
+
+		public Vector3 LocalRadiusEndPosition => transform.up * radius;
 
 		private LineRenderer lineRenderer;
-		private RadiusController next;
-		private TrailController trail;
-		
-		private bool canRotate;
-		private bool haveChild;
 
-		private void Awake()
-		{
-			InitData();
-		}
-
-		private void InitData()
+		protected override void OnInitData()
 		{
 			lineRenderer = GetComponent<LineRenderer>();
 			lineRenderer.positionCount = 2;
-
-			canRotate = false;
-			haveChild = false;
 		}
 
-		private void OnDestroy()
+		public void Initialize(float radius, float rotationSpeed)
 		{
-			StopCoroutine(nameof(Rotate));
+			UpdateRotationSpeed(rotationSpeed);
+			UpdateRadius(radius);
 		}
 
-		public void Initialize(float newRadius, float newSpeed)
-		{
-			radius = newRadius;
-			rotationSpeed = newSpeed;
-			
-			DrawRadius();
-		}
-
-		public void SetRadius(float value)
+		public void UpdateRadius(float value)
 		{
 			radius = value;
 
-			AddChild(haveChild ? next.transform : trail.transform);
-			
 			DrawRadius();
-
-			if (haveChild)
-			{
-				next.DrawRadius();
-			}
 		}
 
-		public void SetRotationSpeed(float value)
-		{
-			rotationSpeed = value;
-		}
+		public void UpdateRotationSpeed(float value) => rotationSpeed = value;
 
-		public void SetWidth(float maxRadius)
-		{
-			float newWidth = maxRadius * widthMultiply;
-
-			lineRenderer.startWidth = newWidth;
-			lineRenderer.endWidth = newWidth;
-		}
-
-		public void AddRadius(RadiusController radiusController)
-		{
-			if (haveChild)
-			{
-				next.AddRadius(radiusController);
-				return;
-			}
-
-			next = radiusController;
-			haveChild = true;
-			
-			AddChild(radiusController.transform);
-		}
-
-		public void AddTrail(TrailController trailController)
-		{
-			if (haveChild)
-			{
-				next.AddTrail(trailController);
-				return;
-			}
-
-			trail = trailController;
-			AddChild(trailController.transform);
-		}
-
-		public void StartRotation()
-		{
-			if (canRotate)
-				return;
-
-			canRotate = true;
-
-			StartCoroutine(nameof(Rotate));
-
-			if (haveChild)
-			{
-				next.StartRotation();
-			}
-		}
-
-		public void StopRotation()
-		{
-			canRotate = false;
-
-			if (haveChild)
-			{
-				next.StopRotation();
-			}
-		}
-
-		public void Reset()
+		public override void Reset()
 		{
 			transform.localRotation = quaternion.identity;
-			DrawRadius();
 
-			if (haveChild)
-			{
-				next.Reset();
-			}
+			DrawRadius();
 		}
 
-		private IEnumerator Rotate()
+		protected override void OnSetWidth(float width)
 		{
-			while (canRotate)
-			{
-				transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
+			lineRenderer.startWidth = width;
+			lineRenderer.endWidth = width;
+		}
 
-				DrawRadius();
+		protected override void OnStartAction()
+		{
+		}
 
-				yield return new WaitForSeconds(Time.deltaTime);
-			}
+		protected override void OnDoAction()
+		{
+			transform.Rotate(Vector3.forward, rotationSpeed * actionRefreshDelay);
+
+			DrawRadius();
+		}
+
+		protected override void OnStopAction()
+		{
+		}
+
+		protected override void OnDestroyed()
+		{
 		}
 
 		private void DrawRadius()
 		{
 			lineRenderer.SetPosition(0, transform.position);
 			lineRenderer.SetPosition(1, transform.position + transform.up * radius);
-		}
-
-		private void AddChild(Transform childTransform)
-		{
-			childTransform.SetParent(transform);
-			childTransform.localPosition = transform.up * radius;
-		}
-
-		private void OnDrawGizmos()
-		{
-			if (!drawGizmos)
-				return;
-
-			Gizmos.color = color;
-			Gizmos.DrawLine(transform.position, transform.position + transform.up * radius);
 		}
 	}
 }

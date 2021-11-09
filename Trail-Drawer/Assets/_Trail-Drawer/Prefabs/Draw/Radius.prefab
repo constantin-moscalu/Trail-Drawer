@@ -142,8 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8912effe0544f0ba294af24a97bac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  widthMultiply: 0.02
+  actionRefreshDelay: 0.02
   radius: 1
   rotationSpeed: 10
-  widthMultiply: 0.02
-  drawGizmos: 1
-  color: {r: 1, g: 1, b: 1, a: 1}

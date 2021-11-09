@@ -4,67 +4,49 @@ using UnityEngine;
 
 namespace Scripts.Controllers
 {
-	public class TrailController : MonoBehaviour
+	public class TrailController : ActionControllerBase
 	{
-		[SerializeField] private float widthMultiply;
-		
 		[HorizontalLine]
 		[SerializeField] private float eraseDuration;
 		[SerializeField] private Ease eraseEase;
-		
+
 		private TrailRenderer trailRenderer;
-
 		private Tween eraseTween;
-		private bool canDraw;
+		private float startTime;
 
-		private void Awake()
-		{
-			InitData();
-		}
-
-		private void InitData()
+		protected override void OnInitData()
 		{
 			trailRenderer = GetComponent<TrailRenderer>();
-			trailRenderer.time = 0;
-		}
-
-		private void OnDestroy()
-		{
-			eraseTween.Kill();
-		}
-
-		private void Update()
-		{
-			if (!canDraw)
-				return;
-
-			trailRenderer.time += Time.deltaTime;
-		}
-
-		public void SetWidth(float maxRadius)
-		{
-			float newWidth = maxRadius * widthMultiply;
-
-			trailRenderer.startWidth = newWidth;
-			trailRenderer.endWidth = newWidth;
-		}
-
-		public void StartDraw()
-		{
-			if (canDraw)
-				return;
-			
-			canDraw = true;
-
 			trailRenderer.time = .1f;
+		}
+
+		public override void Reset()
+		{
+		}
+
+		protected override void OnSetWidth(float width)
+		{
+			trailRenderer.startWidth = width;
+			trailRenderer.endWidth = width;
+		}
+
+		protected override void OnStartAction()
+		{
+			startTime = Time.time;
 			trailRenderer.emitting = true;
 		}
 
-		public void StopDraw()
+		protected override void OnDoAction() => trailRenderer.time += actionRefreshDelay * 1.2f;
+
+		protected override void OnStopAction() => StopDraw();
+
+		protected override void OnDestroyed() => eraseTween.Kill();
+
+		private void StopDraw()
 		{
-			canDraw = false;
 			trailRenderer.emitting = false;
-			
+			trailRenderer.time = Time.time - startTime;
+
 			eraseTween.Kill();
 			eraseTween = DOVirtual.Float(trailRenderer.time, 0f, eraseDuration, value => trailRenderer.time = value).SetEase(eraseEase);
 		}

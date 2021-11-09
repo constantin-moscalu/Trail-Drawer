@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: Hierarchy
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -119,10 +119,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 880, y: 492}
-  m_MaxSize: {x: 16005, y: 14042}
+  m_MinSize: {x: 880, y: 342}
+  m_MaxSize: {x: 16005, y: 8042}
   vertical: 0
-  controlID: 16
+  controlID: 41
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,10 +144,10 @@ MonoBehaviour:
     y: 0
     width: 1499
     height: 947
-  m_MinSize: {x: 605, y: 492}
-  m_MaxSize: {x: 12005, y: 14042}
+  m_MinSize: {x: 605, y: 342}
+  m_MaxSize: {x: 12005, y: 8042}
   vertical: 1
-  controlID: 17
+  controlID: 42
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 18
+  controlID: 43
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -193,8 +193,8 @@ MonoBehaviour:
     y: 0
     width: 269
     height: 671
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -219,8 +219,8 @@ MonoBehaviour:
     y: 0
     width: 893
     height: 671
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -246,8 +246,8 @@ MonoBehaviour:
     y: 0
     width: 337
     height: 671
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -272,14 +272,14 @@ MonoBehaviour:
     y: 671
     width: 1499
     height: 276
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 17}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 17}
   - {fileID: 18}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -453,7 +453,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 2246fffffe54ffff0c55ffff0e56ffff7a56ffffc05dffff546bffff2288ffffee8cffffe68effff5691fffff893fffffc95ffff629cffff1e9effff62a0fffffaa2ffff72a5ffffe0a9ffff24acffffeeb0ffffd8b5ffffd0bbffff1abeffffa0c0ffffeec9ffff8ad0ffffe4d0ffff68d2ffff78d3ffff2cd5ffff96d5ffff7cd6ffff0ad8ffff4cddffffeadeffffb0e0ffff8ee2fffff8e2ffffe8e3ffffbee5ffff2ce6ffffc8e9ffff0aecffff7aeeffff6cf0ffff26faffff40fbffffa6430000704400002e490000285b00003a5c0000445c0000525c00007e5c0000245d00002e5d00003c5d0000685d0000e26300001464000062640000d06400008466000016670000406800006a690000546a0000ac700000c6700000f270000096710000b0710000dc710000ce750000e8750000007600001a760000587600009a7a00002a7c0000627c0000967c00009c7c0000c280000014840000d2860000dc8600000e870000c6870000da8c0000cc8e0000048f0000fa920000e8980000e4990000249a0000f89f00009ea5000006a6000052a6000046b0000098b70000b0b70000c8b70000f4b7000018b8000032b8000074ba00008cba0000a4ba0000c4ba0000eaba000000bb0000f0c0000008c1000020c1000040c1000066c100007cc10000
+      m_ExpandedIDs: 828fffff9a8fffff0292ffff0692ffffc292ffffda92ffff4295ffff4695ffff62a0ffff7ca0ffffe4a2ffffe8a2ffff8ab2ffffc4bcffff98beffff7ac1ffffb8c9ffffc8c9ffff7acaffff58d6ffff0cd9ffff78d9ffff56e1ffff74e1ffff26e2ffff3ce4ffffa4e6ffffd0e8ffff42f0ffff5cf0ffff9af2ffffacf4ffffc4f9ffff40fbffffb6440000bc440000d8440000024500000845000022450000685f0000705f0000925f0000a65f0000dc5f0000b8610000da6100000a620000026700000a6700002c6700004067000072670000766700004a6a0000526a0000746a0000886a0000be6a00002e6e0000466e00005e6e0000806e0000a86e0000be6e0000426f0000646f00007c6f0000946f0000b66f0000de6f0000f46f00005a720000627200008472000098720000ce720000f67a0000fe7a0000207b0000347b00006a7b00002e810000468100005e81000080810000a8810000be810000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -654,14 +654,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/_Trail-Drawer/Resources
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Costea\Documents\Training Projects\Trail-Drawer
+  m_LastProjectPath: C:\Users\Costea\Documents\GitHub\Trail-Drawer\Trail-Drawer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 57}
-    m_SelectedIDs: 08440000
-    m_LastClickedID: 17416
-    m_ExpandedIDs: 00000000f6430000f8430000fa430000fc430000fe43000006440000dc54000000ca9a3b
+    scrollPos: {x: 0, y: 81}
+    m_SelectedIDs: 3e440000
+    m_LastClickedID: 17470
+    m_ExpandedIDs: 00000000284400002a4400002c4400002e4400003044000032440000344400004244000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -689,7 +689,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f6430000f8430000fa430000fc430000fe43000000440000
+    m_ExpandedIDs: 00000000284400002a4400002c4400002e440000304400003244000034440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

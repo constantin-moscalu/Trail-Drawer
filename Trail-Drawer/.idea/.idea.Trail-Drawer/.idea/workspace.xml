@@ -8,28 +8,32 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Systems/GameStateManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Systems/GameState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Models/RadiusDataType.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UISceneLoaderManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/StopSimulationButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/RadiusController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/Utility/ReflectionUtility.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/UIScreen.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UIManagerBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/SelectRadiusButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Managers/RadiusManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/BackToMenuButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UIRadiusListManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/UIElementAnimationsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/TrailController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/IScreenElementAnimationsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/RadiusController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Managers/GameStateTester.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/NaughtyInspector.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/RunSimulationButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Managers/RadiusManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Systems/GameState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Systems/GameStateManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Models/RadiusDataType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/AddValueControlButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/ScreenElementsAnimationController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/ScriptableObjects/RadiusDataTypeDataHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/UIElementAnimationsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/IScreenElementAnimationsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UIRadiusListManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/ScriptableObjects/RadiusDataTypeHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UISceneLoaderManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UIManagerBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/Utility/ReflectionUtility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UIModifyRadiusDataMenuManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/RunSimulationButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/BackToMenuButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/SelectRadiusButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/UIScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/StopSimulationButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/ScriptableObjects/RadiusModifierDataHolder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NaughtyAttributes/Scripts/Editor/NaughtyInspector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/UIModifyValueController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -42,9 +46,7 @@
         <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/RadiusController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Managers/RadiusSetupData.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/RadiusController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/TrailController.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UISceneLoaderManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Systems/GameStateManager.cs" />
         <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/ScreenElementsAnimationController.cs" />
         <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/IScreenElementAnimationsController.cs" />
@@ -58,10 +60,18 @@
         <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Systems/GameState.cs" />
         <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/StopSimulationButton.cs" />
         <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Models/RadiusDataType.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Managers/RadiusManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/SelectRadiusButton.cs" />
         <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/ScriptableObjects/RadiusDataTypeDataHolder.cs" />
         <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UIRadiusListManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/SelectRadiusButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UIModifyRadiusMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/ScriptableObjects/RadiusModifierDataHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Buttons/AddValueControlButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Controllers/UIModifyValueController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UIModifyRadiusDataMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/ScriptableObjects/RadiusDataTypeHolder.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Controllers/RadiusController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/UI/Managers/UISceneLoaderManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Trail-Drawer/Scripts/Managers/RadiusManager.cs" />
       </list>
     </option>
   </component>
@@ -105,6 +115,7 @@
       <workItem from="1635926863762" duration="19439000" />
       <workItem from="1636013067908" duration="16436000" />
       <workItem from="1636100022430" duration="13627000" />
+      <workItem from="1636360350651" duration="13286000" />
     </task>
     <servers />
   </component>

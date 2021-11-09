@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Costea\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Costea\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Trail-Drawer.-1490982506.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Costea\Documents\Training Projects\Trail-Drawer" t="IncludeRecursive">
+    <e p="C:\Users\Costea\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_Trail-Drawer.605328135.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Costea\Documents\GitHub\Trail-Drawer\Trail-Drawer" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -23,7 +23,8 @@
               <e p="RadiusDataType.cs" t="Include" />
             </e>
             <e p="ScriptableObjects" t="Include">
-              <e p="RadiusDataTypeDataHolder.cs" t="Include" />
+              <e p="RadiusDataTypeHolder.cs" t="Include" />
+              <e p="RadiusModifierDataHolder.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
               <e p="GameState.cs" t="Include" />
@@ -31,6 +32,7 @@
             </e>
             <e p="UI" t="Include">
               <e p="Buttons" t="Include">
+                <e p="AddValueControlButton.cs" t="Include" />
                 <e p="BackToMenuButton.cs" t="Include" />
                 <e p="ClickUIButton.cs" t="Include" />
                 <e p="RunSimulationButton.cs" t="Include" />
@@ -41,9 +43,11 @@
                 <e p="IScreenElementAnimationsController.cs" t="Include" />
                 <e p="ScreenElementsAnimationController.cs" t="Include" />
                 <e p="UIElementAnimationsController.cs" t="Include" />
+                <e p="UIModifyValueController.cs" t="Include" />
               </e>
               <e p="Managers" t="Include">
                 <e p="UIManagerBase.cs" t="Include" />
+                <e p="UIModifyRadiusDataMenuManager.cs" t="Include" />
                 <e p="UIRadiusListManager.cs" t="Include" />
                 <e p="UISceneLoaderManager.cs" t="Include" />
               </e>

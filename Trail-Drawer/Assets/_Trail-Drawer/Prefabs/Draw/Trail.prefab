@@ -152,5 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   widthMultiply: 0.02
+  actionRefreshDelay: 0.02
   eraseDuration: 3
   eraseEase: 11
