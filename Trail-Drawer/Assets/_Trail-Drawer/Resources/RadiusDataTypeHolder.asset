@@ -17,3 +17,5 @@ MonoBehaviour:
     rotationSpeed: 30
   - radius: 3
     rotationSpeed: -100
+  - radius: 2
+    rotationSpeed: 50

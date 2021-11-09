@@ -44,9 +44,10 @@ namespace Scripts.UI.Managers
 
 		private void OnGameStateChanged(GameState gameState)
 		{
+			print("Update panel: " + GameStateManager.CurrentState);
 			if (gameState != GameState.Settings)
 				return;
-
+			print("Update panel: " + gameState);
 			radiusNameText.text = radiusModifierDataHolder.RadiusName;
 
 			int index = radiusModifierDataHolder.RadiusIndex;
