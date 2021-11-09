@@ -27,6 +27,7 @@ namespace Scripts.UI.Managers
 
 			selectRadiusButtons = new List<SelectRadiusButton>();
 
+			radiusDataTypeHolder.onRadiusDataTypesModified += UpdateButtonsList;
 			GameStateManager.onGameStateChange += TryUpdateButtonsList;
 
 			UpdateButtonsList();
@@ -34,6 +35,7 @@ namespace Scripts.UI.Managers
 
 		private void OnDestroy()
 		{
+			radiusDataTypeHolder.onRadiusDataTypesModified -= UpdateButtonsList;
 			GameStateManager.onGameStateChange -= TryUpdateButtonsList;
 		}
 

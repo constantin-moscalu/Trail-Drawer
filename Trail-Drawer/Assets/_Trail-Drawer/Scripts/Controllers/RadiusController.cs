@@ -25,6 +25,8 @@ namespace Scripts.Controllers
 		{
 			UpdateRotationSpeed(rotationSpeed);
 			UpdateRadius(radius);
+			
+			DrawRadius();
 		}
 
 		public void UpdateRadius(float value)
@@ -68,7 +70,7 @@ namespace Scripts.Controllers
 		{
 		}
 
-		private void DrawRadius()
+		public void DrawRadius()
 		{
 			lineRenderer.SetPosition(0, transform.position);
 			lineRenderer.SetPosition(1, transform.position + transform.up * radius);

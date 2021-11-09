@@ -12,6 +12,7 @@ namespace Scripts.ScriptableObjects
 
 		public List<RadiusDataType> RadiusDataTypes => radiusDataTypes;
 
+		public event Action onRadiusDataTypesModified; 
 		public event Action<int> onRadiusUpdated;
 		public event Action<int> onRotationSpeedUpdated;
 
@@ -32,6 +33,7 @@ namespace Scripts.ScriptableObjects
 			UpdateRadiusData(index, value, radiusDataTypes[index].rotationSpeed);
 
 			onRadiusUpdated?.Invoke(index);
+			// onRadiusDataTypesModified?.Invoke();
 		}
 
 		public void UpdateRotationSpeed(int index, float value)
@@ -39,6 +41,13 @@ namespace Scripts.ScriptableObjects
 			UpdateRadiusData(index, radiusDataTypes[index].radius, value);
 
 			onRotationSpeedUpdated?.Invoke(index);
+		}
+
+		public void AddRadius()
+		{
+			radiusDataTypes.Add(new RadiusDataType {radius = 0, rotationSpeed = 0});
+			
+			onRadiusDataTypesModified?.Invoke();
 		}
 
 		private void UpdateRadiusData(int index, float radius, float rotationSpeed)

@@ -13,14 +13,15 @@ namespace Scripts.Managers
 
 		[HorizontalLine]
 		[SerializeField] private RadiusController radiusControllerPrefab;
+
 		[SerializeField] private TrailController trailControllerPrefab;
-		
+
 		[HorizontalLine]
 		[SerializeField] private Transform radiusContainerTransform;
 
 		[HorizontalLine]
 		[SerializeField, Range(1f, 10f)] private float timeScale = 1f;
-		
+
 		private RadiusDataTypeHolder radiusDataTypeHolder;
 
 		private List<RadiusController> radiusControllers;
@@ -40,58 +41,34 @@ namespace Scripts.Managers
 		{
 			radiusDataTypeHolder = Resources.Load<RadiusDataTypeHolder>("RadiusDataTypeHolder");
 			radiusControllers = new List<RadiusController>();
-			
+
 			cameraController.SetCameraSize(radiusDataTypeHolder.GetMaxRadius());
 
-			radiusDataTypeHolder.onRadiusUpdated += OnRadiusUpdated;
-			radiusDataTypeHolder.onRotationSpeedUpdated += OnRotationSpeedUpdated;
+			radiusDataTypeHolder.onRadiusDataTypesModified += FullyUpdateRadiusList;
+			radiusDataTypeHolder.onRadiusUpdated += UpdateRadius;
+			radiusDataTypeHolder.onRotationSpeedUpdated += UpdateRotationSpeed;
 
 			GameStateManager.onGameStateChange += OnGameStateChanged;
 
 			InitRadius();
 		}
-		
+
 		private void OnDestroy()
 		{
+			radiusDataTypeHolder.onRadiusDataTypesModified -= FullyUpdateRadiusList;
+			radiusDataTypeHolder.onRadiusUpdated -= UpdateRadius;
+			radiusDataTypeHolder.onRotationSpeedUpdated -= UpdateRotationSpeed;
+
 			GameStateManager.onGameStateChange -= OnGameStateChanged;
 		}
 
 		private void InitRadius()
 		{
-			for (int i = 0; i < radiusDataTypeHolder.RadiusDataTypes.Count; i++)
-			{
-				var radiusData = radiusDataTypeHolder.RadiusDataTypes[i];
-
-				var newRadius = Instantiate(radiusControllerPrefab, radiusContainerTransform);
-				newRadius.Initialize(radiusData.radius, radiusData.rotationSpeed);
-				newRadius.SetWidth(radiusDataTypeHolder.GetMaxRadius());
-
-				radiusControllers.Add(newRadius);
-
-				if (i > 0)
-				{
-					SetHierarchy(radiusControllers[i - 1], newRadius.transform);
-				}
-			}
-
 			trailController = Instantiate(trailControllerPrefab);
-			SetHierarchy(radiusControllers[radiusControllers.Count - 1], trailController.transform);
+
+			FullyUpdateRadiusList();
 		}
 
-		private void SetHierarchy(RadiusController radiusController, Transform child)
-		{
-			child.SetParent(radiusController.transform);
-			child.localPosition = radiusController.LocalRadiusEndPosition;
-		}
-
-		private void OnRadiusUpdated(int index)
-		{
-			radiusControllers[index].UpdateRadius(radiusDataTypeHolder.RadiusDataTypes[index].radius);
-			cameraController.SetCameraSize(radiusDataTypeHolder.GetMaxRadius());
-		}
-
-		private void OnRotationSpeedUpdated(int index) => radiusControllers[index].UpdateRotationSpeed(radiusDataTypeHolder.RadiusDataTypes[index].rotationSpeed);
-		
 		private void OnGameStateChanged(GameState gameState)
 		{
 			switch (gameState)
@@ -107,7 +84,7 @@ namespace Scripts.Managers
 					break;
 			}
 		}
-		
+
 		[Button("Run Simulation")]
 		private void RunSimulation()
 		{
@@ -115,33 +92,107 @@ namespace Scripts.Managers
 			{
 				radiusController.StartAction();
 			}
-			
+
 			trailController.StartAction();
 		}
-		
+
 		[Button("Stop Simulation")]
 		private void StopSimulation()
 		{
 			Time.timeScale = 1f;
-			
+
 			foreach (var radiusController in radiusControllers)
 			{
 				radiusController.StopAction();
 			}
-			
+
 			trailController.StopAction();
-			// trailController.StopDraw();
 		}
-		
+
 		[Button("Reset Simulation")]
 		private void ResetSimulation()
-		{			
+		{
 			foreach (var radiusController in radiusControllers)
 			{
 				radiusController.Reset();
 			}
-			
+
 			trailController.Reset();
 		}
+
+		private void FullyUpdateRadiusList()
+		{
+			UpdateRadiusList();
+			UpdateRadiusListValues();
+			UpdateHierarchy();
+		}
+
+		private void UpdateRadiusList()
+		{
+			if (radiusControllers.Count == radiusDataTypeHolder.RadiusDataTypes.Count)
+				return;
+
+			if (radiusControllers.Count < radiusDataTypeHolder.RadiusDataTypes.Count)
+			{
+				int elementsToCreateAmount = radiusDataTypeHolder.RadiusDataTypes.Count - radiusControllers.Count;
+
+				for (int i = 0; i < elementsToCreateAmount; i++)
+				{
+					var newElement = Instantiate(radiusControllerPrefab, radiusContainerTransform);
+
+					radiusControllers.Add(newElement);
+				}
+			}
+			else
+			{
+				int elementsToRemoveAmount = radiusControllers.Count - radiusDataTypeHolder.RadiusDataTypes.Count;
+				int index = radiusDataTypeHolder.RadiusDataTypes.Count;
+
+				for (int i = index; i < index + elementsToRemoveAmount; i++)
+				{
+					Destroy(radiusControllers[i].gameObject);
+				}
+
+				radiusControllers.RemoveRange(radiusDataTypeHolder.RadiusDataTypes.Count, elementsToRemoveAmount);
+			}
+		}
+
+		private void UpdateHierarchy()
+		{
+			for (int i = 1; i < radiusControllers.Count; i++)
+			{
+				SetHierarchy(radiusControllers[i - 1], radiusControllers[i].transform);
+			}
+
+			SetHierarchy(radiusControllers[radiusControllers.Count - 1], trailController.transform);
+		}
+
+		private void UpdateRadiusListValues()
+		{
+			for (int i = 0; i < radiusControllers.Count; i++)
+			{
+				radiusControllers[i].Initialize(radiusDataTypeHolder.RadiusDataTypes[i].radius, radiusDataTypeHolder.RadiusDataTypes[i].rotationSpeed);
+			}
+		}
+
+		private void SetHierarchy(RadiusController radiusController, Transform child)
+		{
+			child.SetParent(radiusController.transform);
+			child.localPosition = radiusController.LocalRadiusEndPosition;
+		}
+
+		private void UpdateRadius(int index)
+		{
+			radiusControllers[index].UpdateRadius(radiusDataTypeHolder.RadiusDataTypes[index].radius);
+			cameraController.SetCameraSize(radiusDataTypeHolder.GetMaxRadius());
+
+			for (int i = index + 1; i < radiusControllers.Count; i++)
+			{
+				radiusControllers[i].transform.localPosition = radiusControllers[i - 1].LocalRadiusEndPosition;
+				radiusControllers[i].DrawRadius();
+			}
+		}
+
+		private void UpdateRotationSpeed(int index) => radiusControllers[index].UpdateRotationSpeed(radiusDataTypeHolder.RadiusDataTypes[index].rotationSpeed);
 	}
 }
