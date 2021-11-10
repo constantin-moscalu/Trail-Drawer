@@ -23,7 +23,7 @@ namespace Scripts.UI.Buttons
 		{
 			GameStateManager.CurrentState = GameState.StopSimulation;
 
-			DOVirtual.DelayedCall(3f, () => GameStateManager.CurrentState = GameState.Menu);
+			// DOVirtual.DelayedCall(3f, () => GameStateManager.CurrentState = GameState.Menu);
 		}
 	}
 }

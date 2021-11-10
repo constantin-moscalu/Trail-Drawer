@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using NaughtyAttributes;
+using Scripts.Systems;
 using UnityEngine;
 
 namespace Scripts.Controllers
@@ -8,11 +9,13 @@ namespace Scripts.Controllers
 	{
 		[HorizontalLine]
 		[SerializeField] private float eraseDuration;
+
 		[SerializeField] private Ease eraseEase;
 
 		private TrailRenderer trailRenderer;
 		private Tween eraseTween;
 		private float startTime;
+		private Vector3 startPosition;
 
 		protected override void OnInitData()
 		{
@@ -33,10 +36,19 @@ namespace Scripts.Controllers
 		protected override void OnStartAction()
 		{
 			startTime = Time.time;
+			startPosition = transform.position;
 			trailRenderer.emitting = true;
 		}
 
-		protected override void OnDoAction() => trailRenderer.time += actionRefreshDelay * 1.2f;
+		protected override void OnDoAction()
+		{
+			trailRenderer.time += actionRefreshDelay * 1.2f;
+
+			// if ((Time.time - startTime > 1) && Vector3.Distance(startPosition, transform.position) < 0.1)
+			// {
+			// 	GameStateManager.CurrentState = GameState.StopSimulation;
+			// }
+		}
 
 		protected override void OnStopAction() => StopDraw();
 
@@ -48,7 +60,8 @@ namespace Scripts.Controllers
 			trailRenderer.time = Time.time - startTime;
 
 			eraseTween.Kill();
-			eraseTween = DOVirtual.Float(trailRenderer.time, 0f, eraseDuration, value => trailRenderer.time = value).SetEase(eraseEase);
+			eraseTween = DOVirtual.Float(trailRenderer.time, 0f, eraseDuration, value => trailRenderer.time = value)
+				.SetEase(eraseEase).OnComplete(() => GameStateManager.CurrentState = GameState.Menu);
 		}
 	}
 }

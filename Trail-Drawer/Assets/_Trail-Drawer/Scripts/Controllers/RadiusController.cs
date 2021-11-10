@@ -8,7 +8,6 @@ namespace Scripts.Controllers
 	{
 		[HorizontalLine]
 		[SerializeField] private float radius;
-
 		[SerializeField] private float rotationSpeed;
 
 		public Vector3 LocalRadiusEndPosition => transform.up * radius;

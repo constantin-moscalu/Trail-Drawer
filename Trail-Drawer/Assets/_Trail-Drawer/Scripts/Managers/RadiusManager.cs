@@ -13,7 +13,6 @@ namespace Scripts.Managers
 
 		[HorizontalLine]
 		[SerializeField] private RadiusController radiusControllerPrefab;
-
 		[SerializeField] private TrailController trailControllerPrefab;
 
 		[HorizontalLine]
@@ -124,6 +123,7 @@ namespace Scripts.Managers
 		{
 			UpdateRadiusList();
 			UpdateRadiusListValues();
+			UpdateRadiusWidth(radiusDataTypeHolder.GetMaxRadius());
 			UpdateHierarchy();
 		}
 
@@ -175,6 +175,16 @@ namespace Scripts.Managers
 			}
 		}
 
+		private void UpdateRadiusWidth(float maxRadius)
+		{
+			foreach (var radiusController in radiusControllers)
+			{
+				radiusController.SetWidth(maxRadius);
+			}
+			
+			trailController.SetWidth(maxRadius);
+		}
+
 		private void SetHierarchy(RadiusController radiusController, Transform child)
 		{
 			child.SetParent(radiusController.transform);
@@ -193,6 +203,8 @@ namespace Scripts.Managers
 			}
 
 			trailController.transform.localPosition = radiusControllers[radiusControllers.Count - 1].LocalRadiusEndPosition;
+			
+			UpdateRadiusWidth(radiusDataTypeHolder.GetMaxRadius());
 		}
 
 		private void UpdateRotationSpeed(int index) => radiusControllers[index].UpdateRotationSpeed(radiusDataTypeHolder.RadiusDataTypes[index].rotationSpeed);

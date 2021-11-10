@@ -33,7 +33,6 @@ namespace Scripts.ScriptableObjects
 			UpdateRadiusData(index, value, radiusDataTypes[index].rotationSpeed);
 
 			onRadiusUpdated?.Invoke(index);
-			// onRadiusDataTypesModified?.Invoke();
 		}
 
 		public void UpdateRotationSpeed(int index, float value)
